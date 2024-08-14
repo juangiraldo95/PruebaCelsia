@@ -1,0 +1,32 @@
+@model Cliente
+<body>
+    <h1>Editar Cliente</h1>
+
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="Id" />
+        <table class="table table-dark table-striped table-hover">
+            <tr>
+                <td><label asp-for="Nombre">Nombres</label></td>
+                <td><input asp-for="Nombre" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="NumeroIdentificacion">Número Identificación</label></td>
+                <td><input asp-for="NumeroIdentificacion" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="Direccion">Dirección</label></td>
+                <td><input asp-for="Direccion" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="Telefono">Telefono</label></td>
+                <td><input asp-for="Telefono" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="CorreoElectronico">Correo</label></td>
+                <td><input asp-for="CorreoElectronico" class="form-control" /></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a class="btn btn-dark" asp-area="" asp-controller="Clientes" asp-action="Index">Volver</a>
+    </form>
+</body>

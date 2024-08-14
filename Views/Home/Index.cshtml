@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Inicio - Celsia";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .header {
+            background-color: #f7941e;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .header img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            margin: 50px auto;
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .content h1 {
+            color: #f7941e;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: #f7941e;
+            border-color: #f7941e;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffab3f;
+            border-color: #ffab3f;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://sibcolombia.net/wp-content/uploads/2019/10/logo-celsia-300x300.png" alt="Celsia Logo">
+        <h2>Bienvenido a Celsia</h2>
+    </div>
+    
+    <div class="content text-center">
+        <h1>¡Energía que Impulsa el Futuro!</h1>
+        <p>En Celsia, nos dedicamos a llevar energía a cada rincón del país, impulsando el desarrollo sostenible y mejorando la calidad de vida de millones de personas. Explora nuestras soluciones innovadoras y descubre cómo estamos transformando el mundo de la energía.</p>
+        <a class="btn btn-primary" asp-controller="Login" asp-action="Login">Inicio Sesion</a>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Celsia. Todos los derechos reservados.
+    </div>
+</body>
+</html>

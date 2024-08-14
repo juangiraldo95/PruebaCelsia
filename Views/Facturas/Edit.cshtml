@@ -1,0 +1,32 @@
+@model Factura
+<body>
+    <h1>Editar Cliente</h1>
+
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="Id" />
+        <table class="table table-dark table-striped table-hover">
+            <tr>
+                <td><label asp-for="NumeroFactura">Numero Factura</label></td>
+                <td><input asp-for="NumeroFactura" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="PeriodoFacturacion">Periodo Facturacion</label></td>
+                <td><input asp-for="PeriodoFacturacion" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="MontoFacturado">Monto Facturado</label></td>
+                <td><input asp-for="MontoFacturado" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="MontoPagado">Monto Pagado</label></td>
+                <td><input asp-for="MontoPagado" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="TransaccionId">ID Transacción</label></td>
+                <td><input asp-for="TransaccionId" class="form-control" /></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a class="btn btn-dark" asp-area="" asp-controller="Facturas" asp-action="Index">Volver</a>
+    </form>
+</body>

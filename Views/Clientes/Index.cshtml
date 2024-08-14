@@ -1,0 +1,68 @@
+@{
+    Layout = "_LayoutLimpio";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/estilosfacturas.css" asp-append-version="true" />
+</head>
+
+<div class="container mt-4">
+        <!-- Botón en el dashboard u otra vista -->
+    <form asp-controller="Excel" asp-action="UploadExcel" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Seleccionar archivo Excel:</label>
+            <input type="file" id="file" name="file" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Subir Archivo</button>
+    </form>
+
+    <div class="mb-3">
+        <a type="button" class="btn btn-primary" asp-area="" asp-controller="Clientes" asp-action="Create">Crear Cliente</a>
+    </div>
+    
+    <h1 class="text-center mb-4">LISTADO DE CLIENTES</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombres</th>
+                    <th>Numero Identificacion</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Correo Electronico</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.Id</td>
+                            <td>@user.Nombre</td>
+                            <td>@user.NumeroIdentificacion</td>
+                            <td>@user.Direccion</td>
+                            <td>@user.Telefono</td>
+                            <td>@user.CorreoElectronico</td>
+                            <td>
+                                <a class="btn btn-info" asp-area="" asp-controller="Clientes" asp-action="Edit" asp-route-id="@user.Id">Editar</a>
+                                <button class="btn btn-danger ms-2" onclick="confirmDelete('@user.Id')">Eliminar</button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function confirmDelete(id) {
+        if (confirm('¿Estás seguro de que quieres eliminar este cliente?')) {
+            // Redirige al controlador de eliminación con el id del cliente
+            window.location.href = '/Clientes/Delete/' + id;
+        }
+    }
+</script>

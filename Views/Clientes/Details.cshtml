@@ -1,0 +1,28 @@
+<div class="table-responsive">
+    <table class="table table-dark table-striped table-hover">
+    <tr>
+        <td>ID</td>
+        <td>Nombres</td>
+        <td>Numero Identificacion</td>
+        <td>Direccion</td>
+        <td>Telefono</td>
+        <td>Correo</td>
+      
+    
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.Nombre</td>
+        <td>@Model.NumeroIdentificacion</td>
+        <td>@Model.Direccion</td>
+        <td>@Model.Telefono</td>
+        <td>@Model.CorreoElectronico</td>
+        
+            <a class="btn btn-info" asp-area="" asp-controller="Clientes" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+            <a class="btn btn-danger" asp-area="" asp-controller="Clientes" asp-action="Delete" asp-route-id="@Model.Id">Eliminar</a>
+            <a class="btn btn-light" asp-area="" asp-controller="Clientes" asp-action="Index">Volver</a>
+        </td>
+    </tr>
+
+</table>
+</div>

@@ -1,0 +1,58 @@
+@{
+    Layout = "_LayoutLimpio";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/estilosfacturas.css" asp-append-version="true" />
+</head>
+
+<div class="container mt-4">
+    <div class="mb-3">
+        <a type="button" class="btn btn-primary" asp-area="" asp-controller="Facturas" asp-action="Create">Crear Factura</a>
+    </div>
+    <h1 class="text-center mb-4">LISTADO DE FACTURAS</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Numero Factura</th>
+                    <th>Periodo Facturacion</th>
+                    <th>Monto Facturado</th>
+                    <th>Monto Pagado</th>
+                    <th>Transaccion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.Id</td>
+                            <td>@user.NumeroFactura</td>
+                            <td>@user.PeriodoFacturacion</td>
+                            <td>@user.MontoFacturado</td>
+                            <td>@user.MontoPagado</td>
+                            <td>@user.TransaccionId</td>
+                            <td>
+                                <a class="btn btn-info" asp-area="" asp-controller="Facturas" asp-action="Edit" asp-route-id="@user.Id">Editar</a>
+                                <button class="btn btn-danger ms-2" onclick="confirmDelete('@user.Id')">Eliminar</button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function confirmDelete(id) {
+        if (confirm('¿Estás seguro de que quieres eliminar esta factura?')) {
+            // Redirige al controlador de eliminación con el id de la factura
+            window.location.href = '/Facturas/Delete/' + id;
+        }
+    }
+</script>

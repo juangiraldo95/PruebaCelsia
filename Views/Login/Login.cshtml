@@ -1,0 +1,32 @@
+
+@{
+	Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/estiloslogin.css" asp-append-version="true" />
+</head>
+<body class="login">
+    <div class="main-container">
+        <div class="form-container">
+            <img src="https://sibcolombia.net/wp-content/uploads/2019/10/logo-celsia-300x300.png" alt="Celsia Logo">
+            <p class="title">Bienvenido, inicia sesión</p>
+            <!---------------------------Formulario Inicio de sesion--------------------------------------->
+            <form class="form" asp-action="Index" asp-controller="Clientes" method="post">
+                <input type="email" class="input form-control" placeholder="Email" id="Email" name="email" required>
+                <input type="password" class="input form-control" placeholder="Contraseña" id="contrasena" name="password" required>
+                <button type="submit" class="form-btn btn mt-3">Iniciar Sesion</button>
+                <a class="form-btn btn mt-3" asp-area="" asp-controller="Home" asp-action="Index">Vovler a Inicio</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+   
+

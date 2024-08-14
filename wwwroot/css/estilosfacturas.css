@@ -1,0 +1,53 @@
+/* Colores de Celsia */
+:root {
+    --primary-color: #f7941e; /* Color naranja */
+    --secondary-color: #ffffff; /* Color blanco */
+    --text-color: #333333; /* Color de texto */
+}
+
+body {
+    background-color: #f5f5f5; /* Color de fondo suave */
+    color: var(--text-color);
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+/* Estilo de la tabla */
+.table {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+}
+
+.table thead {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1; /* Fondo claro al pasar el ratón */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #e68a1f; /* Un tono más oscuro de naranja */
+}
+
+.btn-info {
+    background-color: #17a2b8; /* Color azul para editar */
+    border-color: #17a2b8;
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Color rojo para eliminar */
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Un tono más oscuro de rojo */
+}
